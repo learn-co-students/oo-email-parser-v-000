@@ -13,7 +13,7 @@ class EmailParser
   end
 
   def parse
-    array = emails.gsub(",","").split(" ").uniq
+    emails.gsub(",","").split(" ").uniq
   end  
 
 end
