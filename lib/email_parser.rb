@@ -1,16 +1,14 @@
 class EmailParser
-  attr_accessor :string
+  attr_accessor :emails
 
-  def initialize(string)
-    @string = string
+  def initialize(emails)
+    @emails = emails
   end
 
   def parse
-    parsed = self.string.split(" ")
-    parsed.collect do |parse|
-      parse.gsub!(",","")
-      parse = parse.chomp
-    end.uniq
+  emails.split.collect do |email| 
+    email.split(",")
+  end.flatten.uniq
   end
 
 end
