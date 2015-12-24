@@ -11,11 +11,6 @@ class EmailParser
   end
 
   def parse
-    unique_emails = []
-    emails.split(/[,\s]\s?/).each do |email|
-      unique_emails << email unless unique_emails.include?(email)
-    end
-    unique_emails
+    emails.split(/[,\s]\s?/).uniq
   end
-
 end
