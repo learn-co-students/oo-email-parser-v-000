@@ -8,6 +8,6 @@ class EmailParser
 	end
 	
 	def parse
-		@list.scan(/(?<=\b)[A-Za-z\.\@]*/)
+		@list.gsub(/s/,"").split(" ").uniq
 	end
 end
