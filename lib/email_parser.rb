@@ -14,6 +14,9 @@ attr_accessor :emails
     parsed_emails.delete("")
     #can't put the bang operator (!) at the end of .uniq here because if there are no duplicates, the return value is nil. 
     parsed_emails.uniq
+
+    #can refactor above code to the following:
+    #emails.split(/,*\s/).uniq
   end
 
 end
