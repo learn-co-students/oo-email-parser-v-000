@@ -1,14 +1,14 @@
-#test
 class EmailParser
   attr_accessor :emails
 
   def initialize(emails)
-    @emails = emails
+    self.emails = emails
   end
 
   def parse
-    @emails_parsed = emails.scan(/\w+@\w+\.com/).uniq
-    @emails_parsed
+    self.emails.split(/ |, |,/).uniq
   end
 
+
 end
+
