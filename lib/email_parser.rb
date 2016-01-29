@@ -13,3 +13,11 @@ class EmailParser
 	end
 	
 end
+
+__END__
+# learn solution
+def parse
+    emails.split.map do |email|
+      email.split(',')
+    end.flatten.uniq
+ end
