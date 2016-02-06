@@ -12,7 +12,7 @@ class EmailParser
   end
 
   def parse
-    @@email = @email.split().collect{|e| e.split(",")}.flatten
-    @@email = @@email.uniq
+    @@email = @email.split().collect{|e| e.split(",")}.flatten #pseudo: split to get rid of spaces, then collect a new array that gets rid of commas, flatten is needed to put everything back together
+    @@email = @@email.uniq # .uniq is OP.
   end
 end
