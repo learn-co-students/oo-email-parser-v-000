@@ -1,0 +1,1 @@
+puts "avi@test.com, arel@test.com test@avi.com, test@arel.com".split(/[\s, ])
