@@ -11,8 +11,9 @@ class EmailParser
   end
 
   def parse
-    
-    emails = @emails.split(",").each {|email| email.strip!}.map {|email| email.split(" ")}.flatten
+
+    mails = emails.split(",").each {|email| email.strip!}.map {|email| email.split(" ")}.flatten
+    #this works but looks janky. may want to split it up on multiple lines
 =begin
     if emails.include?(",")
       @emails = @emails.split(",").each {|email| email.strip!}
@@ -30,7 +31,8 @@ class EmailParser
     @emails << store.first.split(" ")
     @emails.delete_if {|email| email.count("@") > 1}
 =end
-    emails.uniq  #had .flatten in here as well earlier
+    mails.uniq  #had .flatten in here as well earlier
+    
 
   end
 
