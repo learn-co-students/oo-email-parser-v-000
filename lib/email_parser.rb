@@ -5,14 +5,14 @@ class EmailParser
     @name = name
   end
 
-  
-  
+
+
   def parse
-    name.split.map do |names|
-      names.split(',')
+    name.split.map do |namess|
+      namess.split(',')
     end.flatten.uniq
   end
-  
-  
-  
+
+
+
 end
