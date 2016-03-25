@@ -11,6 +11,7 @@ class EmailParser
 
   def parse
     @emails.split(/[\s,]+/).uniq
+    #split on whitespace \s or comma , the + means one or more
   end
 
 end
