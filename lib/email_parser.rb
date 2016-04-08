@@ -9,8 +9,12 @@ class EmailParser
   end
 
   def parse
-    data = @emails.split(/[, ]/)
-    emails_array = data.reject { |e| e.empty? }
-    emails_array.uniq
+    # data = @emails.split(/[, ]/)
+    # emails_array = data.reject { |e| e.empty? }
+    # emails_array.uniq
+
+    @emails.split.map do |email|
+      email.delete(",")
+    end.flatten.uniq
   end
 end
