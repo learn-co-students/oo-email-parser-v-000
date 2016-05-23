@@ -14,7 +14,7 @@ class EmailParser
 
 
   def parse 
-    @emails.gsub!(" ", ',')
+   # @emails.gsub!(" ", ',')
     @emails.split(/\,/).map{|email| email.strip || email }.reject(&:empty?).uniq
   end 
 
