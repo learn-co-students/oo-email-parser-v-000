@@ -5,15 +5,15 @@
 
 
 class EmailParser
-  attr_accessor :email_string
+  attr_accessor :emails
 
-  def initialize(email_string)
-    @email_string = email_string
+  def initialize(emails)
+    @emails = emails
   end
 
-  def parse(email_string)
-    array = email_string.split(" " || ",")
-    array.unique
+  def parse
+    array = @emails.split(/[,\s]/)
+    array.uniq.reject(&:empty?)
   end
 
 end
