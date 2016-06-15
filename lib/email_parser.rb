@@ -1,19 +1,18 @@
-require "pry"
 class EmailParser
 
-  attr_accessor :parse, :emails
-
-  @@emails_array=[]
+  attr_accessor  :emails
 
   def initialize(emails)
-    @@emails = emails
-    @@emails_array
+    @emails = emails
   end
 
   def parse
-    @@emails.delete!(',')
-    @@emails.split.each do |email|
-      @@emails_array.uniq << email
+    @emails_array=[] #create an empty array that can hold the parsed data
+    @emails.delete!(',') # delete all commas
+    @emails.split.each do |email| #add commas after every seperated word
+      @emails_array << email
     end
+    @emails_array.uniq
   end
+  
 end
