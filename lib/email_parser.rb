@@ -12,7 +12,7 @@ class EmailParser
   end
 
   def parse
-    email_arr = self.emails.split(/[\s,]/)
+    email_arr = emails.split(/[\s,]/)
     email_arr.uniq!
     email_arr.delete("")
     email_arr
