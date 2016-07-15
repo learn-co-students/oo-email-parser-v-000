@@ -5,18 +5,13 @@
 class EmailParser
   attr_accessor :email
 
-  @@parse = []
-  def self.parse(email)
-    rows = csv_data.split("\n")
-    people = rows.collect do |row|
-      data = row.split(", ")
-      name = data[0]
-      age = data[1]
-      company = data[2]
+  def initialize(email)
+    @email = email
+  end
 
-      person = self.new
-      person.email = email
-      @@parse << person 
-    end
+  def parse
+    email.split.map do |email|
+      email.split(',')
+    end.flatten.uniq
   end
 end
