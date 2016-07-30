@@ -16,5 +16,3 @@ class EmailParser
     split_email_addresses
   end
 end
-
-emails = "avi@test.com, arel@test.com test@avi.com, test@arel.com"
