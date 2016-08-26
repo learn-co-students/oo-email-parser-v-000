@@ -6,8 +6,8 @@ class EmailParser
   end
 
   def parse
-    email_array = @emails.split(",", " ")
-    email_array.uniq!
+    email_array = @emails.scan(/\S+.com/)
+    email_array.uniq
   end
 
 
