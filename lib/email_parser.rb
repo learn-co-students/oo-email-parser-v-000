@@ -15,6 +15,12 @@ attr_reader :emails
   def parse
       new_emails = @emails.split(/[\s,]+/)
     new_emails.uniq
+
+    # another way of writing this code
+    # def parse
+    # emails.split.map do |email|
+    #   email.split(',')
+    # end.flatten.uniq
   end
 
 
