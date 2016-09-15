@@ -13,10 +13,7 @@ attr_reader :emails
   end
 
   def parse
-    new_emails = @emails.split(",")
-    new_email_stripped = new_emails.collect {|each_email| each_email.strip}
-new_emails = @emails.split( )
-binding.pry
+      new_emails = @emails.split(/[\s,]+/)
     new_emails.uniq
   end
 
