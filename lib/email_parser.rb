@@ -11,7 +11,7 @@ class EmailParser
   end
 
   def parse
-    parsed = @email_list.scan(/\w+@\w+\.\w+/)
+    parsed = @email_list.split(",")
     parsed = parsed.uniq
     parsed
   end
