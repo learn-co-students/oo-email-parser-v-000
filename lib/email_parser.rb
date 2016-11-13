@@ -12,13 +12,17 @@ class EmailParser
   end
 
   def parse
-    parsed = []
-    parsed_with_duplicates = emails.gsub(/,/, " ").split.each do |email|
-      unless parsed.include?(email)
-      parsed << email
-      end
-    end
-    parsed
+    emails.split.map do |email|
+      email.split(",")
+    end.flatten.uniq
+  # Alternate solution:
+    # parsed = []
+    # parsed_with_duplicates = emails.gsub(/,/, " ").split.each do |email|
+    #   unless parsed.include?(email)
+    #   parsed << email
+    #   end
+    # end
+    # parsed
   end
 
 end
