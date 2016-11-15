@@ -4,8 +4,7 @@ class EmailParser
 
   def initialize(email_addresses)
     @@addresses.clear
-    addresses = email_addresses.split(/[ ,]+/)
-    addresses.each { |address| @@addresses << address unless @@addresses.include?(address) }
+    email_addresses.split(/[ ,]+/).each { |address| @@addresses << address unless @@addresses.include?(address) }
   end
 
   def parse
