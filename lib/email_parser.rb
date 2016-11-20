@@ -1,4 +1,5 @@
 class EmailParser
+
   attr_accessor :emails
 
   def initialize(emails)
@@ -6,8 +7,8 @@ class EmailParser
   end
 
   def parse
-    emails.split.map do |email|
-    email.split(',')
+    @emails.split.collect do |email|
+      email.split(",")
   end.flatten.uniq
 end
 end
