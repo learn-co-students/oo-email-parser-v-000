@@ -7,7 +7,7 @@ class EmailParser
 
   attr_accessor :email
 
-  @@all = []
+
 
   def initialize(email)
 
@@ -21,7 +21,7 @@ class EmailParser
       @all = []
       parse_email.delete("")
       parse_email.each do |email|
-      @@all << email
+      
       @all << email
 
     end
