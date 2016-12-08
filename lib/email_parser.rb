@@ -11,7 +11,7 @@ class EmailParser
 
   def parse
     @emails.split(/\s+/) 
-           .collect{|e| e.split(',')}
+           .map{|e| e.split(',')}
            .flatten
            .uniq
   end
