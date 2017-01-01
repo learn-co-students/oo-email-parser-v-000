@@ -5,13 +5,15 @@ class EmailParser
   attr_accessor :email
 
   def initialize (emails)
-    binding.pry
-    @email = emails.split(",")
+    @email = emails
   end
 
   def parse
-    binding.pry
-    @email.collect!{|obj|obj.strip}
+    striper = @email.split(",") && @email.split(" ").collect! do |obj|
+      obj.delete(",")
+    end
+    striper.uniq!
+    return striper
   end
 
 end
