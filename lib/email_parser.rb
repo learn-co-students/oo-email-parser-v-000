@@ -9,19 +9,7 @@ class EmailParser
     @emails = emails
   end
 
-  def self.create_with_email
-    parser = self.new
-    parser.emails = emails
-  end
-
   def parse
-    array_of_emails = self.emails.split(/,\s|\s/)
-    no_duplicates ||= []
-    array_of_emails.each do |email_address|
-      if no_duplicates.include?(email_address) == false
-        no_duplicates << email_address
-      end
-    end
-    no_duplicates
+    @emails.split(/,\s|\s/).uniq
   end
 end
