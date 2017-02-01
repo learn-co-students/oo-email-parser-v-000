@@ -14,5 +14,4 @@ class EmailParser
     email_arr = @email_addresses.scan(/[a-z0-9]+@[a-z0-9]+[.]+[a-z]{3}/i)
     email_arr.uniq
   end
-
 end
