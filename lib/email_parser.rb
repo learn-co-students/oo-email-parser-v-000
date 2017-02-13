@@ -13,14 +13,8 @@ class EmailParser
   def parse
     #binding.pry
     #rows = csv_data.split("\n")
-    people = email.split(/(\,)|(\s)/) do |row|
-      data = email.split(",")
-      email = data[0]
-      person = self.new
-      person.email = email
-      person
-                        end
-    people
-    binding.pry
-    end
+    people = email.split(/[\,\s]+/)
+    people.uniq#removes duplicates ref ruby-doc
+    #binding.pry
+  end
 end
