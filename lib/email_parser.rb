@@ -6,8 +6,9 @@ require 'pry'
 class EmailParser
   @@all = []
   attr_accessor :email
-  def initialize(name)
-    @name = name
+  def initialize(email)
+    #accepts a string of unformatted emails
+    @email = email
   end
   def parse
     #binding.pry
