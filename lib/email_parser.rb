@@ -9,11 +9,11 @@ class EmailParser
   def initialize(name)
     @name = name
   end
-  def parse(name)
-    binding.pry
+  def parse
+    #binding.pry
     #rows = csv_data.split("\n")
-    people = row.collect do |row|
-      data = row.split(",")
+    people = email.collect do |row|
+      data = email.split(",")
       email = data[0]
       person = self.new
       person.email = email
