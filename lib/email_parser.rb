@@ -14,7 +14,7 @@ end
 def parse
   # How will you control for parsing a list of emails that is either comma separated or separated by a white space.
   emails.split.map do |email|
-    email.split(',')
+    email.split(",")
   end.flatten.uniq
 
 end
