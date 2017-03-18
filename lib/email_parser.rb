@@ -10,7 +10,11 @@ class EmailParser
   end
 
   def parse
-    @emails.split(/[,\s]/).reject{|email| email.empty?}.uniq
+    #solution
+    #@emails.split(/[,\s]/).reject{|email| email.empty?}.uniq
+
+    #refactored solution
+    @emails.split(/[,\s]+/).uniq
   end
 
 end
