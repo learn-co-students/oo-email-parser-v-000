@@ -12,9 +12,14 @@ class EmailParser
     @email_address = email_address
   end
 
+  # def parse
+  #   email_address.split.map do |email|
+  #     email.split(',')
+  #   end.flatten.uniq
+  # end
+
   def parse
-    email_address.split.map do |email|
-      email.split(',')
-    end.flatten.uniq
+     parser_email = emails.split(/[,\s]+/).uniq
   end
+
 end
