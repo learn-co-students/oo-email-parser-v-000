@@ -19,7 +19,7 @@ class EmailParser
   # end
 
   def parse
-     parser_email = emails.split(/[,\s]+/).uniq
+     parse_email = email_address.split(/[,\s]+/).uniq
   end
 
 end
