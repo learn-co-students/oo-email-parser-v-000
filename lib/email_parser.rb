@@ -10,8 +10,8 @@ class EmailParser
   end
 
   def parse
-    results = self.emails.split(/(\w*@\w*\.\w*)/)
-    binding.pry
+    # results = self.emails.split(/[, ]/).select {|string| string.length>0}
+    results = self.emails.scan(/(\w\w*@\w\w*\.\w\w*)/)
     results.flatten.uniq
   end
 end
