@@ -11,11 +11,7 @@ class EmailParser
   def parse
     final = []
     newmail = list.split(/[,\s]/).uniq
-    newmail.each do |space|
-      if space != ""        #seriously ugly. :(
-        final << space
-      end
-    end
-      return final
+    newmail.each {|space| final << space unless space.empty?}
+    final
   end
 end
