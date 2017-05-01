@@ -9,6 +9,6 @@ class EmailParser
    @emails = emails
  end
   def parse
-    emails.delete(",").split(" ").uniq
+    emails.delete(",").split(" ").uniq #delete removes commas, split removes white space, and uniq removes duplicates and returns a new array
   end
 end
