@@ -10,4 +10,5 @@ class EmailParser
     final = @list.split(/\.\s|\,/).collect{|item| item.split(" ")}.flatten
     final & final
   end
+
 end
