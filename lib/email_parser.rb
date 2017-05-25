@@ -8,7 +8,6 @@ class EmailParser
     
     def initialize(emails)
        @email_str = emails
-       #puts emails + " are here."
     end
 
     def parse
