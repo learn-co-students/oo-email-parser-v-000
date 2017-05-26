@@ -14,9 +14,7 @@ class EmailParser
   end
 
   def parse
-    emails.split.map do |i|
-      i.split(',')
-    end.flatten.uniq
+    emails.split(/, |\s/).uniq
   end
 
 
