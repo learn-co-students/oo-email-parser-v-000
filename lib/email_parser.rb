@@ -1,15 +1,13 @@
 class EmailParser
-  
+
   attr_accessor :emails
 
   def initialize(emails)
-    @emails = emails.split(/,\s|[\s]/)
+    @emails = emails
   end
 
   def parse
-    parsed_emails = []
-    @emails.each { |email| parsed_emails << email if !parsed_emails.index(email) }
-    parsed_emails
+    @emails.split.collect { |email| email.split(',') }.flatten.uniq
   end
 
 end
