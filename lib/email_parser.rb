@@ -21,8 +21,11 @@ class EmailParser
 
   def parse
     #binding.pry
-    @@all = @email_string.split(", ")
-  #   binding.pry
+
+      @@all = @email_string.split(/, |,| /)
+      @@all = @@all.uniq
+
+     #binding.pry
   end
 
 
