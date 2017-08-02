@@ -6,12 +6,15 @@
 class EmailParser
   attr_accessor :email
 
+  # accepts arg of unformatted emails
   def initialize(email)
       @email = email
   end
 
+  # separates emails by comma and space
+  # returns unique emails only
   def parse
-    emails = email.gsub(",", "").split(" ").uniq {|x| x}
+    emails = email.gsub(",", "").split(" ").uniq  
   end
 
 end
