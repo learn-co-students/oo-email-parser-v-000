@@ -13,12 +13,6 @@ class EmailParser
 
 
 	def parse
-		# if @emails.include? ", "
-		# 	data = @emails.split(", ") 
-		# elsif @emails.include? " "	
-		# 	data = @emails.split(" ")
-		# end
-		data = @emails.split(/,|\s/)
-		data.uniq.delete_if {|e| e==""}
+		data = @emails.split(/,|\s/).uniq.delete_if {|e| e==""}
 	end
 end
