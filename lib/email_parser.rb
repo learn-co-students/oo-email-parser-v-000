@@ -8,8 +8,8 @@ class EmailParser
 
   attr_accessor :emails
 
-  def initialize(email_string)
-    @emails = email_string
+  def initialize(emails)
+    @emails = emails
   end
 
   def parse
