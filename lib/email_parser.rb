@@ -6,7 +6,13 @@
 class EmailParser
   attr_accessor :email
 
-  def parse(emails)
+  def initialize(emails)
+    @emails = emails
+  end
 
+  def parse
+    split_array = @emails.split(/[, ]/)
+    cleaned_emails = split_array.reject {|el| el == "" }
+    cleaned_emails.uniq
   end
 end
