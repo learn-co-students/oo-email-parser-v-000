@@ -6,10 +6,10 @@ class EmailParser
   attr_accessor :emails
 
   def initialize(emails)
-    @emails = emails
+    self.emails = emails
   end
 
   def parse
-    emails.split(/[\s,]/).uniq.reject {|email| email.empty?}
+    self.emails.split(/[\s,]/).uniq.reject {|email| email.empty?}
   end
 end
