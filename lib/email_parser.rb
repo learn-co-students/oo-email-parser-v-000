@@ -5,14 +5,16 @@
 require 'pry'
 class EmailParser
 
-attr_accessor :emails
+attr_reader :emails
 
   def initialize(emails)
     @emails = emails
   end
 
   def parse
-    @emails.split(/\,\s|\s/).uniq
+    @emails.split(/\,\s|\s/).uniq #can also use emails.split.map do |email|
+    #   email.split(',')
+    # end.flatten.uniq
   end
 
 end
