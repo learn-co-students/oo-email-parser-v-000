@@ -13,3 +13,6 @@ class EmailParser
     self.emails.split(/[\s,]/).uniq.reject{|string| string.empty?}
   end
 end
+
+emails = "avi@test.com, arel@test.com test@avi.com, test@arel.com"
+EmailParser.new(emails).parse
