@@ -10,9 +10,6 @@ class EmailParser
   end
 
   def parse
-    self.emails.split(/[\s,]/).uniq.reject{|string| string.empty?}
+    @emails.split(/[\s,]/).uniq.reject{|string| string.empty?}
   end
 end
-
-emails = "avi@test.com, arel@test.com test@avi.com, test@arel.com"
-EmailParser.new(emails).parse
