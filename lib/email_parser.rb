@@ -1,4 +1,24 @@
-# Build a class EmailParser that accepts a string of unformatted 
+# Build a class EmailParser that accepts a string of unformatted
 # emails. The parse method on the class should separate them into
 # unique email addresses. The delimiters to support are commas (',')
 # or whitespace (' ').
+
+#parses csv emails
+#parses sapce delimited emails
+#parses both csv and space delimited emails
+#parses and removes duplicate emails
+
+class EmailParser
+
+  attr_accessor :emails
+
+  def initialize(emails)
+    @emails = emails
+  end
+
+  def parse
+    emails.split.collect do |email|
+      email.split(',')
+    end.flatten.uniq
+  end
+end
