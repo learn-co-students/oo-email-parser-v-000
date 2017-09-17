@@ -24,3 +24,8 @@ end
 #       email.split(',')
 #     end.flatten.uniq
 # end
+
+#### ALTERNATIVE ####
+# def parse
+#   emails.split(/(, | )/).select {|item| item.length > 2}.uniq
+# end
