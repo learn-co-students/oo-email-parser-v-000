@@ -14,32 +14,7 @@ class EmailParser
   end
 
   def parse
-
     @emails.delete(",").split(" ").uniq
-
   end
 
 end
-
-=begin
-class EmailParser
-  attr_reader :emails
-
-  def initialize(emails)
-    @emails = emails
-  end
-
-  def parse
-    emails.split.map do |email|
-      email.split(',')
-    end.flatten.uniq
-  end
-end
-=begin
-I should be able to to this:
-emails = "john@doe.com, person@somewhere.org"
-parser = EmailParser.new(emails)
-
-parser.parse
-# => ["john@doe.com", "person@somewhere.org"]
-=end
