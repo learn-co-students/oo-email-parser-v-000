@@ -4,10 +4,14 @@
 # or whitespace (' ').
 class EmailParser
 
-  EMAILS = []
+  attr_accessor :emails
+
   def initialize(emails)
-    EMAILS << emails.scan(/[a-zA-Z0-9_@.-]+/)
+    @emails = emails
   end
 
-  EMAILS
+  def parse
+    @emails.scan(/[a-zA-Z0-9_@.-]+/).uniq
+  end
+
 end
