@@ -9,6 +9,6 @@ attr_accessor :email
   end
 
   def parse
-    raw_emails = email.split(/[\s,]+/).uniq
+    email.split(/[\s,]+/).uniq
   end
 end
