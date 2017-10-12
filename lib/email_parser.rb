@@ -8,12 +8,10 @@ class EmailParser
   attr_accessor :emails
 
   def initialize(emails)
-    @emails = emails
+    @emails=emails
   end
 
   def parse
-    emails.split.collect do |email|
-      email.split(',')
-    end.flatten.uniq #=>uniq removes the duplicates, flatten creates one array
+    emails.split(/[\s,]/).reject {|e| e.to_s.empty? }.uniq
   end
 end
