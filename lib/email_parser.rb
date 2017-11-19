@@ -11,7 +11,6 @@ class EmailParser
   end
 
   def parse
-    parse_array = []
     @emails.split(/[,\s]/).collect {|emails| emails.strip if emails.strip != ""}.compact.uniq
   end
 end
