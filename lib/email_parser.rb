@@ -5,7 +5,10 @@
 
 class EmailParser 
   # create instance method - parse - that returns an array
-  
+  def parse(emails) 
+    # should take a string of emails, return an array of emails in correct format
+    
+  end 
   
   
   
