@@ -1,0 +1,57 @@
+# initialize instance of EmailParser
+# save the instance/object if not a duplicate (*OR)
+# convert from string into an array of individual emails (account for comma separated and/or spaced separated)
+# *then remove duplicates
+
+# ["avi@test.com, arel@test.com"]
+
+# ["avi@test.com arel@test.com"]
+
+# ["avi@test.com, arel@test.com, test@avi.com, test@arel.com"]
+
+# ["avi@test.com arel@test.com test@avi.com test@arel.com"]
+
+# @@all.join(" ").sub(",", " ").split #works for white space
+
+# @@all.join.split #works for space
+
+# @@all.join.split(", ") #works for commas
+
+--- First real solution ---
+
+class EmailParser
+
+  attr_accessor :email_set
+
+  @@all =[]
+
+  def self.all
+    @@all
+  end
+
+  def initialize(email_set)
+    @email_set = email_set
+    @@all << email_set
+  end
+
+  def parse
+    comma_space_string = @@all.join.gsub(", ", " ") # results in space delimited string
+    comma_parse = @@all.join.split(", ") # takes in all commas & results in comma-spaced array
+    space_parse = @@all.join.split # takes in all spaced & results in comma-spaced array
+
+    if comma_space_string.include?(",")
+      if comma_parse.join.include?(" ") #if the string includes a space
+        space_parse
+      else
+        comma_parse
+      end
+    else
+      comma_space_string.split(" ")
+    end
+  end
+
+end
+
+#to_parse = EmailParser.new("avi@test.com arel@test.com")
+
+#to_parse.parse
