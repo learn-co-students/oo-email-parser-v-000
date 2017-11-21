@@ -13,22 +13,16 @@ class EmailParser
     @@email_list << self
     
   end
-  # create instance method - parse - that returns an array
  
   def parse 
-    
-   # separate emails by comma and return an array
-    # @@email_list or @email_addresses
-    
-      parse_email = @email_addresses.tr(',', ' ') #replace the commas in the string with spaces
-   parse_email.split(" ").map(&:strip) # split emails by spaces
-       #should return an array with emails split between spaces 
-      
-    
-    
-#     
-  end
+    # instance method
     # should take a string of emails, return an array of emails in correct format
+      parse_email = @email_addresses.tr(',', ' ') #replace the commas in the string with spaces
+      parse_email.split(" ").map(&:strip) # split emails by spaces
+       #should return an array with emails split between spaces 
+   
+  end
+    
    
   
   
