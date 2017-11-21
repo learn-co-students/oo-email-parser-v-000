@@ -19,9 +19,10 @@ class EmailParser
     
    # separate emails by comma and return an array
     # @@email_list or @email_addresses
-      
-   parse_email = @email_addresses.split(/\s/)
-      parse_email.delete(",")
+    
+      parse_email = @email_addresses.tr(',', ' ') #replace the commas in the string with spaces
+   parse_email.split(" ").map(&:strip) # split emails by spaces
+       #should return an array with emails split between spaces 
       
     
     
