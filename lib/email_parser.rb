@@ -19,9 +19,11 @@ class EmailParser
     
    # separate emails by comma and return an array
     # @@email_list or @email_addresses
-      binding.pry
-   @@email_list << @email_addresses
-      @@email_list.collect {|c| c.email_addresses == emails}
+      #@@email_list << @email_addresses
+     if @email_addresses
+      @email_addresses.split(",").map(&:strip)
+      @email_addresses.split(" ").map(&:strip)
+     end 
 #      # detecting emails by commas 
 #  #if @email_addresses.include?(",")
 #       @email_addresses.split(" ")
