@@ -5,11 +5,11 @@ require 'pry'
 # or whitespace (' ').
 
 class EmailParser 
-  attr_accessor :email_address 
+  attr_accessor :email_addresses 
   @@email_list = []
 
   def initialize(emails)
-   @email_address = emails 
+   @email_addresses = emails 
     @@email_list << self
     
   end
@@ -21,6 +21,7 @@ class EmailParser
   def parse 
     binding.pry
    # separate emails by comma and return an array
+    # @@email_list or @email_addresses
   
    @@email_list.detect { |email_check| email_check.split(",")}
     
