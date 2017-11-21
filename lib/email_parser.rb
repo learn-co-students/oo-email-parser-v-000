@@ -20,7 +20,7 @@ class EmailParser
    # separate emails by comma and return an array
     # @@email_list or @email_addresses
   
-   @@email_list.detect { |email_check| email_check[0].split(",")}
+   @@email_list.collect { |email_check| email_check[0].split(",")}
     
     # should take a string of emails, return an array of emails in correct format
    
