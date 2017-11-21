@@ -14,16 +14,13 @@ class EmailParser
     
   end
   # create instance method - parse - that returns an array
-  def all 
-    @@email_list 
-  end
-  
+ 
   def parse 
     binding.pry
    # separate emails by comma and return an array
     # @@email_list or @email_addresses
   
-   @@email_list.detect { |email_check| email_check.split(",")}
+   @@email_list.detect { |email_check| email_check[0].split(",")}
     
     # should take a string of emails, return an array of emails in correct format
    
