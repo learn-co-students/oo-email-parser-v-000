@@ -16,14 +16,17 @@ class EmailParser
   # create instance method - parse - that returns an array
  
   def parse 
+    
    # separate emails by comma and return an array
     # @@email_list or @email_addresses
    
-    if @email_addresses.include?(",")
+  if @email_addresses.include?(",")
        @email_addresses.split(",").map(&:strip)
     elsif @email_addresses.include?(" ")
        @email_addresses.split(" ")
-
+    elsif @email_addresses.include?(@email_addresses) 
+##    
+  end    
    
   end
     # should take a string of emails, return an array of emails in correct format
