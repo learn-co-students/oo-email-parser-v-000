@@ -19,20 +19,13 @@ class EmailParser
     
    # separate emails by comma and return an array
     # @@email_list or @email_addresses
-      #@@email_list << @email_addresses
-     if @email_addresses
-      @email_addresses.split(",").map(&:strip)
-      @email_addresses.split(" ").map(&:strip)
-     end 
-#      # detecting emails by commas 
-#  #if @email_addresses.include?(",")
-#       @email_addresses.split(" ")
-#    if @email_addresses.include?(",")
-#       @email_addresses.split(",")
-#   # elsif @email_addresses.include?(@email_addresses) 
-###    
-#  end    
-   
+      
+   parse_email = @email_addresses.split(/\s/)
+      parse_email.delete(",")
+      
+    
+    
+#     
   end
     # should take a string of emails, return an array of emails in correct format
    
