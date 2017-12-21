@@ -11,16 +11,8 @@ class EmailParser
   end
 
   def parse
-    email_array = emails.split(" ")
-    contains_duplicates = email_array.map do |e|
-      if e.include? ","
-        e.tr(',', '')
-      else
-        e
-      end
-    end
-    contains_duplicates.uniq
+    emails.split.map do |e|
+      e.split(',')
+    end.flatten.uniq
   end
-
-
 end
