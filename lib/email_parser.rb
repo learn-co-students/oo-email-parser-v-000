@@ -11,8 +11,8 @@ class EmailParser
   end
 
   def parse
-    emails.split.map do |email|
-      email.split (",")
-    end.flatten.uniq
+    emails.split.map do |email| #splits emails by spaces
+      email.split (",") #splits emails by commas
+    end.flatten.uniq #flattens into array, controls for duplicates
   end
 end
