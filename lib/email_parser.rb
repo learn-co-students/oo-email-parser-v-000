@@ -29,11 +29,29 @@ class EmailParser
 
 def parse
   unique_emails = []
-  #unique_emails = @emails.split.collect{|x| x.split(",")}.flatten.uniq
   unique_emails = @emails.scan(/\w+@\w+.\w+\b/).uniq
+  # my solution 2 unique_emails = @emails.split.collect{|x| x.split(",")}.flatten.uniq
+  #avi's
+=begin
+emails.split.map do |email|
+    email.split(',')
+  end.flatten.uniq
+=end
   unique_emails
 end
 
+
+#notes on solution and parsing in general
+#don't overwhelm yourself with parsing by considering all possible ways to parse
+#select a strategy and focus on that strategy (and appropriate enumberable)
+#to find the appropriate enumberable, consider inputs and outputs
+#here we needed an enumerable that returned an array
+#some possible regex/enumerable patterns
+
+#grep(regexp) => array
+#grep searches arrays and hashes and returns an array of all the items in the string that match
+#grep(regexp){|obj| block} => array
+#collect {|obj| block (maybe split by regexp pattern)}
 
 
 
