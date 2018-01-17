@@ -7,8 +7,6 @@ require 'pry'
 class EmailParser
   attr_accessor :emails
 
-  # @@emailsarray = []
-
   def initialize(emails)
     @emails = emails
   end
@@ -17,7 +15,3 @@ class EmailParser
     emailsarray = self.emails.split(/[\s,]+/).uniq
   end
 end
-
-
-#Creating New Email Parser
-#EmailParser.new(emails)
