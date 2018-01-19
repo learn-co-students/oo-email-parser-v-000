@@ -4,7 +4,6 @@ class EmailParser
 
    def initialize(emails)
       @emails = emails
-      parse
    end
 
    def parse
