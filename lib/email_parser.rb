@@ -7,10 +7,13 @@ class EmailParser
   end
 
   def parse
-    @emails.split.collect do |email|
-      email.gsub(",", "")
+    email_list = []
+    self.emails.gsub(",", "").split(" ").each do |email|
+      if email_list.include?(email) == false
+       email_list << email
+      end
     end
-    .uniq
+    email_list
   end
-
+  
 end
