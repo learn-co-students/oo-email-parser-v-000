@@ -9,8 +9,8 @@ class EmailParser
   
   def parse
   @email_string = @email_string.split(/[\s,']/)  
-  @email_string.delete_if {|c| c.empty?}
-  @email_string.uniq
+  @email_string.delete_if {|c| c.empty?}.uniq
+  
   end  
 
 end  
