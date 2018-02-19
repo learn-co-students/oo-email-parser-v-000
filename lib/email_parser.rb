@@ -5,15 +5,13 @@
 
 class EmailParser
   attr_accessor :emails
-
-  # initialized with a string of emails
-  def initialize(emails) #=> emails = "john@doe.com, person@somewhere.org"
-    @emails = emails #=> will initialize a new instance with the string of emails assigned to the @emails instance variable
+  
+  def initialize(emails)
+    @emails = emails
   end
 
-  def parse #=> instance method that will parse the string of emails
+  def parse
     emails.split(/[,\s]+/).uniq
-    #=> return value ["john@doe.com", "person@somewhere.org"]
   end
 
 end
