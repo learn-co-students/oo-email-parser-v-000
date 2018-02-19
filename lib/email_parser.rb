@@ -14,7 +14,7 @@ class EmailParser
 
   def parse
     if emails.include?(",")
-      arr = emails.gsub!(/,/, " ").split
+      arr = emails.gsub!(/,/, "").split
     else
       arr = emails.split
     end
