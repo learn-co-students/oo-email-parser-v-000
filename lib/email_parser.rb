@@ -6,15 +6,19 @@
 
 
 class EmailParser
-  attr_accessor :parse
+  attr_accessor :emails
 
   def initialize(emails)
+    @emails = emails
+  end
+
+  def parse
     if emails.include?(",")
       arr = emails.gsub!(/,/, " ").split
     else
       arr = emails.split
     end
-    @parse = arr.uniq
+      arr.uniq
   end
 
 
