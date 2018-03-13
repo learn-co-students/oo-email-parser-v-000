@@ -4,27 +4,14 @@
 # or whitespace (' ').
 require 'pry'
 class EmailParser
-  attr_accessor :parse
-  @@arr = []
+  attr_accessor :emails
 
-  def self.all
-    @@arr
-  end #def self.all
+  def initialize(emails)
+    @emails = emails
+  end #def initialize
 
-  def self.new(list)
-    parser = self.new
-    list.parse = list
-
-
-  end #def self.new
-
-  def self.parse
-    
-    parser = list.split(/[, ]/)
+  def parse
+    emails.split(/\s|,/).delete_if {|x| x == ""}.uniq
   end #def parse
 
 end #def class EmailParser
-#split into array
-#remove duplicates .uniq
-
-#get string of emails as argument
