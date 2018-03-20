@@ -6,21 +6,18 @@
 require 'pry'
 
 class EmailParser
+  attr_reader :emails
 
-attr_accessor :emails
-
-def initialize(emails)
-	@emails = emails
-end
-
-
-  def parse
-binding.pry
-    emails.split(", ")
+  def initialize(emails)
+    @emails = emails
   end
 
+  def parse
+    emails.split.map do |email|
+      email.split(',')
+    end.flatten.uniq
+  end
 end
-
 
 
 # emails = "john@doe.com, person@somewhere.org"
