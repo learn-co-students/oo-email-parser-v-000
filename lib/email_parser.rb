@@ -14,8 +14,7 @@ attr_accessor :emails
 
   def parse
     #binding.pry
-    array = @emails.split(/,\s|\s/)
-    array.uniq
+    @emails.split(/,\s|\s/).uniq
   end
 
 
