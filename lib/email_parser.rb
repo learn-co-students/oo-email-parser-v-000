@@ -5,6 +5,6 @@ class EmailParser
   end
 
   def parse
-    parsed_emails = @emails.split(/[^@.\w-]+/).uniq
+    @emails.split(/[^@.\w-]+/).uniq
   end
 end
