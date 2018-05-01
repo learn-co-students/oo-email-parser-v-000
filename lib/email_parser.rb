@@ -8,16 +8,7 @@ def initialize(emails)
 end
 
 def parse
-#@emails is a string
-#condition
-#@emails.split(" ")
-#else
-#emails.split(", ")
-  if @emails
-    @emails.split(" ")
-  else
-    @emails.split(", ")
-  end
+  @emails.split(/,?\s/).uniq
 end
 
 
