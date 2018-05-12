@@ -11,7 +11,7 @@ def initialize(emails)
 end 
 
 def parse
-  splitEmail = emails.split.collect {|address| address.split(',')} 
+  splitEmail = emails.split.collect {|address| address.split(/[,\s]/)} 
   returnArr = splitEmail.flatten.uniq
   returnArr
 end
