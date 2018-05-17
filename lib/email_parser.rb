@@ -9,18 +9,19 @@ class EmailParser
      @email = emails
    end
 
+  #  Official Lab Solution:
    def parse
-    emails.split.map do |email|
-    email.split(',')
-    end.flatten.uniq
-  end
+     email.split.map do |email|
+       email.split(',')
+     end.flatten.uniq #never seen "end.something" before
+   end
+ end
 
+# Alternate solution:
   #  def parse
   #   # @email.gsub(regex pattern, replacement).split(" ").uniq → new_str
   #     @email.gsub(/[\s,]/ ," ").split(" ").uniq
   #   end
-
-end
 
     # Returns a copy of str with the all occurrences of pattern
     # substituted for the second argument. The pattern is typically
@@ -28,7 +29,7 @@ end
     # it contains will be interpreted literally, e.g. '\\d' will match a
     # backlash followed by ‘d’, instead of a digit.
 
-  # alternate:
+# Another alternate solution:
 
   #  def parse
   #   parsed_emails = @email.split(/[, ]/).uniq
