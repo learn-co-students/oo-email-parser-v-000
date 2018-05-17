@@ -10,9 +10,15 @@ class EmailParser
    end
 
    def parse
-    # @email.gsub(regex pattern, replacement).split(" ").uniq → new_str
-      @email.gsub(/[\s,]/ ," ").split(" ").uniq
-    end
+    emails.split.map do |email|
+    email.split(',')
+    end.flatten.uniq
+  end
+
+  #  def parse
+  #   # @email.gsub(regex pattern, replacement).split(" ").uniq → new_str
+  #     @email.gsub(/[\s,]/ ," ").split(" ").uniq
+  #   end
 
 end
 
