@@ -1,4 +1,3 @@
-require 'pry'
 describe "EmailParser" do
   describe '#parse' do
     it "parses CSV emails" do
