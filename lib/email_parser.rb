@@ -11,7 +11,7 @@ class EmailParser
   end
 
   def parse
-    @emails_string.split(" ").collect do |email|
+    @emails_string.split.collect do |email|
       email.gsub(",", "")
     end.uniq
   end
