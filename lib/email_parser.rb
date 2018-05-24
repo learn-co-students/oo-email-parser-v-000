@@ -14,7 +14,7 @@ class EmailParser
   end
 
   def parse
-    emails_list = emails_raw.split(", ")
+    emails_list = @emails_raw.split(/\,\s(?<=\w\,\s)|\s(?<=\w\s)/)
     emails_list.uniq
   end
 
