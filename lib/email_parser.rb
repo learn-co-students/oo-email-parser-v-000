@@ -14,6 +14,12 @@ class EmailParser
   end
 
   def parse
+    # this regex captures:
+      # either:
+      #   a comma followed by a whitespace
+      #    (where before them both is a word character)
+      #   a whitespace
+      #    (where before it is a word character)
     emails_list = @emails_raw.split(/\,\s(?<=\w\,\s)|\s(?<=\w\s)/)
     emails_list.uniq
   end
