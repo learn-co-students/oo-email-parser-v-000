@@ -5,9 +5,12 @@
 class EmailParser(emails)
 
 
+
+
+
   def parse
     emails.split(",", " ")
-
+    emails.uniq
   end
 
 end
