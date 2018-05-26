@@ -2,7 +2,7 @@
 # emails. The parse method on the class should separate them into
 # unique email addresses. The delimiters to support are commas (',')
 # or whitespace (' ').
-class EmailParser(emails)
+class EmailParser
 
   attr_accessor :emails
 
@@ -13,4 +13,3 @@ class EmailParser(emails)
     emails.uniq
   end
 
-end
