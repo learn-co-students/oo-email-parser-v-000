@@ -12,4 +12,4 @@ class EmailParser
     emails.split(",", " ")
     emails.uniq
   end
-
+end
