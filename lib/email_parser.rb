@@ -1,9 +1,6 @@
-# Build a class EmailParser that accepts a string of unformatted
-# emails. The parse method on the class should separate them into
-# unique email addresses. The delimiters to support are commas (',')
+# A class EmailParser that accepts a string of unformatted
+# emails. The delimiters supported are commas (',')
 # or whitespace (' ').
-
-require 'pry'
 
 class EmailParser
 
@@ -23,6 +20,5 @@ class EmailParser
     emails_list = @emails_raw.split(/\,\s(?<=\w\,\s)|\s(?<=\w\s)/)
     emails_list.uniq
   end
-
 
 end
