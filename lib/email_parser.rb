@@ -2,6 +2,16 @@
 # emails. The delimiters supported are commas (',')
 # or whitespace (' ').
 
+# rspec 
+# describe "EmailParser" do
+#   describe '#parse' do
+#     it "parses both CSV and space delimited emails and removes duplicate emails" do
+#       emails = "email@test.com, email2@test.com test@email.com, test@email.com"
+#       expect(EmailParser.new(emails).parse).to eq(["email@test.com", "email2@test.com", "test@email.com"]) 
+#     end
+#   end
+# end
+
 class EmailParser
 
   attr_accessor :emails_raw
