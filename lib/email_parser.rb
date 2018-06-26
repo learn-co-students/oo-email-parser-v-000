@@ -8,7 +8,9 @@ class EmailParser
   attr_accessor :name, :csv_emails
 
 
-# every time .new is created; the initialize methid is be called and a instance variable called @name will equal to to arg
+# every time .new is created;
+#the initialize methid is be called and a
+#instance variable called @name will equal to to arg
   def initialize(name)
     @name = name
   end
