@@ -5,25 +5,22 @@
 
 #create a EmailParser class
 #create an instance method - parse
+# an INSTANCE METHOD calls on a SPECIFIC INSTANCE of that class! not the enitre class...
 #delete duplicate emails (detect, sortby?...)
-#
+
+require 'pry'
+
 class EmailParser
   attr_accessor :emails
-  @@all = []
+#  @emails = []
 
-def initialize(emails)
-  @emails = emails
-  @@all << self
-end
+  def initialize(emails)
+    @emails = emails
+  end
 
-def self.all
-  @@all?
-end
-
-def parse(emails)
-  #instance method. takes in the argument (the string of emails)
-  emails.split(/\b/)
-  #returns the new array so you dont need to explicitly tell it to do so here
-end
-
-end
+  def parse
+    #cannot iterate through string - need to do so through an array!
+    parsed_emails = []
+    parsed_emails = @emails.split(/[,\s]+/).uniq
+  end
+  end
