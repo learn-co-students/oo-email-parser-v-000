@@ -22,7 +22,7 @@ end
 
 def parse(emails)
   #instance method. takes in the argument (the string of emails)
-  emails.split(" ", ",")
+  emails.split(/\b/)
   #returns the new array so you dont need to explicitly tell it to do so here
 end
 
