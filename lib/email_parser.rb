@@ -10,6 +10,7 @@ class EmailParser
   def parse
     email_list = []
     split_emails = emails.split(/[\s,]+/).uniq
+    
     split_emails.map do |x| 
       email_list << x
         end
