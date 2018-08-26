@@ -9,7 +9,6 @@ class EmailParser
     @emails = emails
   end
   def parse
-    parsed_emails = @emails.split(/, | - | /) #matches ", " or " - " or " "
-    parsed_emails.uniq
+    @emails.split(/, | - | /).uniq #matches ", " or " - " or " "
   end
 end
