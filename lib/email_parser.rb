@@ -7,6 +7,6 @@ class EmailParser
 
   def parse
     split = @emails.split(/[,][ ]|[ ]/)
-    split.unique
+    split.uniq
   end
 end
