@@ -15,6 +15,7 @@ class EmailParser
   
   def parse
     new_emails = @emails.split().collect {|e| e.strip.delete(",")}
+    new_emails = new_emails.uniq
     new_emails
   end
   
