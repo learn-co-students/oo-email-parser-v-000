@@ -11,12 +11,17 @@ class EmailParser
      @emails = emails 
      
     def parse
-    emails.split.map do |email|
-   
-     end 
-    emails.split(", ")
+    email_array = @emails.split(/[, ]/).uniq 
+    email_array.reject! { |element| element.empty? }
+    email_array 
+    
+    #emails.split.map do |email|
+    #end 
+    #emails.split(, ")
+     #end 
     end 
-  
+   
+    
  end 
   
 end 
