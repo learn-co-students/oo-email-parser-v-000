@@ -18,6 +18,7 @@ class EmailParser
     else 
       data = @emails.split(" ")
     end 
+    
     return data 
   end 
   
