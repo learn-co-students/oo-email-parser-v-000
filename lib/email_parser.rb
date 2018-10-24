@@ -25,8 +25,10 @@ class EmailParser
   #   @@all
   # end
   def parse
-    emails.split.map do |email|
+    emails.split.map do |email| #map takes enumerable object and a block, and executes the block for each element
       email.split(',')
-    end.flatten.uniq
+    end.flatten.uniq # #flatten turns multi dimensional array into single array by extracting elements into new array; #uniq removes duplicate elements
   end
+  
+  
 end
