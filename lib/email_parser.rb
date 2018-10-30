@@ -4,19 +4,20 @@
 # or whitespace (' ').
 
 require 'pry'
-# binding.pry
+ # binding.pry
 
 
 class EmailParser
   attr_accessor :email_address
   
   def initialize(emails)
-    email_address=emails
+    @email_address = emails
   end
   
   
   def parse(emails)
-    
+    @email_address = emails.split(/[,\s*]/)
+    @email_address = @email_address.compact.reject { |h| h == "" }
   end
 
 end
