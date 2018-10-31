@@ -8,15 +8,15 @@ require 'pry'
 
 
 class EmailParser
-  attr_accessor :email_address
+  attr_accessor :emails
   
   def initialize(emails)
-    @email_address = emails
+    @emails = emails
   end
   
   
   def parse
-   self.email_address.split(/, *|\s/).uniq
+   emails.split(/, *|\s/).uniq
   end
 
 end
