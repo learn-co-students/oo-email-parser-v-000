@@ -15,9 +15,9 @@ class EmailParser
   end
   
   
-  def parse(emails)
-    @email_address = emails.split(/[,\s*]/)
-    @email_address = @email_address.compact.reject { |h| h == "" }
+  def parse
+   self.email_address.split(/, *|\s/).uniq
+  
   end
 
 end
