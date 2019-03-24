@@ -5,13 +5,8 @@
 
 class EmailParser
 
-attr_accessor :emails, :parser
-@@all = []
+attr_accessor :emails
 
-def self.all
-  @@all
-end
+def
 
-def save
-  self.class.all <<  self
 end
