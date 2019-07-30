@@ -4,17 +4,23 @@
 # or whitespace (' ').
 class EmailParser 
   
-  attr_accessor :emails
+  attr_accessor :emails 
   
   @@emails = []
-
-  def initialize(emails)
-    self.emails = emails 
-  end 
   
-  def parse
-    results = self.emails.scan(/(\w\w*@\w\w*\.\w\w*)/)
-    results.flatten.uniq
+  def initialize(emails)
+    @emails = emails 
   end
   
+  def parse
+  email_array = @emails.split(/[, ]/).uniq
+  email_array.reject! {|element| element.empty?}
+  email_array
+  end
+    
 end
+
+email_addresses = "john@doe.com, person@somewhere.org"
+parser = EmailParser.new(email_addresses)
+ 
+puts parser.parse
