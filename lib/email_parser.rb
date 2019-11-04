@@ -1,12 +1,12 @@
 require 'pry'
-class EmailParser
 
+class EmailParser
   def initialize(emails)
     @emails = emails
   end
 
   def parse
-    @emails.split.map {|e| e.split(',')}.flatten.uniq
+    @emails.split.map { |email| email.split(',') }.flatten.uniq
   end
 
 end
