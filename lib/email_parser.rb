@@ -1,12 +1,12 @@
-require 'pry'
-
 class EmailParser
-  def initialize(emails)
-    @emails = emails
+  attr_accessor :email_addresses
+
+  def initialize(email_addresses)
+    @email_addresses = email_addresses
   end
 
   def parse
-    @emails.split.map { |email| email.split(',') }.flatten.uniq
+    @email_addresses.split.map { |email| email.split(',') }.flatten.uniq
   end
 
 end
