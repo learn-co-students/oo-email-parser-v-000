@@ -5,24 +5,14 @@
 require 'pry'
 
 class EmailParser
+  attr_reader :email_addresses
 
-  attr_accessor :emails
-
-  def initialize(emails)
-    @emails = emails
+  def initialize(email_addresses)
+    @email_addresses = email_addresses
   end
 
   def parse
-    email_array = @emails.split(/, |,| | ,/)
-    email_array.each do |email|
-      email_array.each do |e|
-        if e == email
-          email_array.uniq!
-        end
-      end
-    end
+    @email_addresses.split(/[\s,]+/).uniq
   end
-
-
 
 end
